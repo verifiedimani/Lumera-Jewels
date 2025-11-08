@@ -1,0 +1,99 @@
+/* GLOBAL */
+* {margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+body{background:#fff;color:#222;overflow-x:hidden;}
+
+/* HEADER */
+header{display:flex;justify-content:space-between;align-items:center;padding:15px 60px;position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+.logo-area{display:flex;align-items:center;}
+.logo-img{width:50px;height:50px;margin-right:12px;}
+.logo-text{font-size:1.8rem;color:#b08968;font-weight:600;}
+nav a{margin-left:25px;text-decoration:none;color:#444;font-weight:500;}
+nav a:hover{color:#b08968;}
+
+/* HERO */
+.hero-section{height:100vh;background:url('https://images.unsplash.com/photo-1611606063063-3fc02eebfa5f') center/cover no-repeat;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:0 20px;}
+.hero-title{font-size:3rem;color:#d4af37;text-shadow:0 5px 15px rgba(0,0,0,0.5);}
+.hero-section p{margin:20px 0;max-width:600px;line-height:1.8;}
+.shop-btn{background:#b08968;border:none;color:#fff;padding:12px 30px;border-radius:25px;cursor:pointer;transition:all 0.3s ease;}
+.shop-btn:hover{background:#8b5e3c;transform:translateY(-3px);}
+
+/* STORY SECTION */
+.brand-story{display:flex;flex-wrap:wrap;padding:100px 60px;align-items:center;background:#faf7f5;}
+.story-content{display:flex;flex-wrap:wrap;gap:50px;justify-content:center;}
+.text-box{flex:1 1 400px;}
+.text-box h2{font-size:2rem;margin-bottom:20px;color:#b08968;}
+.text-box p{line-height:1.8;margin-bottom:15px;}
+.image-box{flex:1 1 400px;}
+.image-box img{width:100%;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
+
+/* FOUNDER STORY */
+.founder-story{display:flex;flex-wrap:wrap;padding:100px 60px;align-items:center;background:#fff;}
+.founder-content{display:flex;flex-wrap:wrap;gap:50px;justify-content:center;}
+.founder-story .text-box{flex:1 1 400px;}
+.founder-story .image-box{flex:1 1 400px;}
+.founder-story img{width:100%;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
+
+/* COLLECTION */
+.collection{text-align:center;padding:100px 60px;background:#f8f5f1;}
+.collection h2{font-size:2.3rem;margin-bottom:50px;color:#b08968;}
+.products{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;}
+.product-card{background:#fff;padding:20px;border-radius:15px;width:260px;box-shadow:0 4px 15px rgba(0,0,0,0.05);transition:transform 0.4s ease;}
+.product-card:hover{transform:translateY(-10px);}
+.product-card img{width:100%;height:250px;object-fit:cover;border-radius:10px;}
+.product-card h3{margin-top:15px;font-size:1.2rem;}
+.product-card p{color:#b08968;font-weight:600;}
+
+/* PROMO */
+.promo{padding:100px 60px;text-align:center;}
+.promo h2{font-size:2rem;color:#b08968;margin-bottom:20px;}
+
+/* FOOTER */
+footer{background:#111;color:#ccc;padding:60px 40px 30px;}
+.footer-content{display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px;}
+footer h4{color:#b08968;margin-bottom:10px;}
+footer input{padding:8px 10px;border-radius:5px;border:none;margin-top:5px;margin-bottom:10px;}
+.subscribe-btn{padding:10px 20px;background:#b08968;color:#fff;border:none;border-radius:20px;cursor:pointer;transition:0.3s;}
+.subscribe-btn:hover{background:#8b5e3c;transform:translateY(-2px);}
+.copy{text-align:center;font-size:0.9rem;margin-top:20px;}
+/* SLIDE-IN ANIMATION FOR PRODUCT CARDS */
+.product-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.product-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ANIMATION FOR STORY AND FOUNDER SECTIONS */
+.story, .founder {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.9s ease;
+}
+
+.story.visible, .founder.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Optional: alternate slide from right for variety */
+.story-alt {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.9s ease;
+}
+
+.story-alt.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* ANIMATIONS */
+.fade-in{opacity:0;animation:fadeIn 1.2s ease forwards;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+/* RESPONSIVE */
+@media(max-width:1024px){header{padding:15px 30px;}}
+@media(max-width:768px){.hero-section h2{font-size:2.2rem;}.text-box,.image-box{flex:1 1 100%;}.collection{padding:60px 20px;}footer{padding:40px 20px;}nav{justify-content:center;gap:15px;}}
+@media(max-width:480px){.hero-section h2{font-size:1.8rem;}.shop-btn{padding:10px 25px;font-size:0.9rem;}.logo-text{font-size:1.3rem;}}
